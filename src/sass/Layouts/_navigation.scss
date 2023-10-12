@@ -1,0 +1,129 @@
+header {
+	height: 8dvh;
+	display: flex;
+	align-items: center;
+	gap: 2em;
+	justify-content: space-between;
+	margin: 0 1.5em;
+    overflow: hidden;
+
+	.nav-btn {
+		padding: 5px;
+		cursor: pointer;
+		background: transparent;
+		border: none;
+		outline: none;
+		color: var(--textColor);
+		display: none;
+		opacity: 0;
+		font-size: 1.8rem;
+		order: 1;
+	}
+
+	.logo {
+		color: var(--dark2);
+        width: 15%;
+        cursor: pointer;
+		mix-blend-mode: multiply;
+		filter: contrast(1);
+
+        
+        img {
+            overflow: hidden;
+            width: 100%;
+        }
+
+	
+	}
+
+	nav {
+		ul {
+			margin: 0;
+			display: flex;
+			gap: 1em;
+			li {
+                font-size: 1.1em;
+                font-weight: bolder;
+
+                &:hover {
+                    transition: all 0.1s ease-in;
+                    color: var(--red);
+                    font-weight: bolder;
+                }
+
+
+                &:last-child{
+                    display: none;
+                }
+
+				list-style: none;
+				:hover,
+				:active {
+					color: var(--dark1);
+				}
+			}
+		}
+	}
+
+	.right-content {
+		display: flex;
+		align-items: center;
+	}
+
+	@media only screen and (max-width: 668px) {
+		.nav-btn {
+			display: flex;
+			opacity: 1;
+		}
+
+        .logo {
+		color: var(--dark2);
+        width: 40%;
+        cursor: pointer;
+        
+        img {
+            overflow: hidden;
+            width: 100%;
+        }
+	}
+
+
+		nav {
+			position: fixed;
+			top: 0dvh;
+			left: -100vw;
+			height: 100%;
+			width: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 1.5rem;
+			background-color: var(--dark1);
+			color: var(--light1);
+			transition: 1s;
+
+			.nav-close-btn {
+				position: absolute;
+				top: 2rem;
+				right: 2rem;
+			}
+
+			ul {
+				flex-direction: column;
+                li {
+                    &:last-child{
+                       display: flex;
+                   }
+
+                }
+			}
+
+            
+		}
+
+		.responsive_nav {
+			transform: translateX(100vw);
+			z-index: 10;
+		}
+	}
+}
